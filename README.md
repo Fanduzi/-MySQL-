@@ -58,6 +58,7 @@ mysqldump在备份MyISAM表时, 是不锁DML的 ,也就是说如果备份期间�
 
 这个坑使用官方发型版本的MySQL数据库时, 无论使用xtrabackup还是mysqldump还是mydumper都有可能发生
 具体就是使用`START TRANSACTION /*!40100 WITH CONSISTENT SNAPSHOT */;`语句显式开启一个事务之后，该事务执行select之前，该表被其他会话执行了DDL之后无法查询数据 
+详见mysqldump与[mysqldump与innobackupex备份过程知多少（三）](http://geek.csdn.net/news/detail/228711)中的坑二
 
 A会话
 
